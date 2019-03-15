@@ -1,0 +1,4 @@
+File inside the working directory.
+Company name: One Company INC. 
+Ontario Corporation No.  12123123123
+GST / HST Number:  8888888888
