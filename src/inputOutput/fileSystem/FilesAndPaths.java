@@ -9,6 +9,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class FilesAndPaths {
 
@@ -77,6 +81,20 @@ public class FilesAndPaths {
 //		Path filePath2 = Paths.get("../../JavaPrograms/OutThere.txt");
 		Path filePath2 = Paths.get(".." + File.separator +".." + File.separator + "JavaPrograms" + File.separator + "OutThere.txt");
 		System.out.println("filePath2 exists? " + Files.exists(filePath2));
+		
+		// Code for copying file with a new name containing timestamp
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
+		Date date = new Date();
+		String extentReportNameWithTimeStamp = "extent-report" + dateFormat.format(date).toString() + ".html";	
+		String sourcePath = System.getProperty("user.dir") + "/target/cucumber-reports/extent-report.html";
+		String destFile = System.getProperty("user.dir") + "/target/cucumber-reports/" + extentReportNameWithTimeStamp;
+		
+//		try {
+//			FileUtils.moveFile(FileUtils.getFile(sourcePath), FileUtils.getFile(destFile));
+//		} catch (IOException e) {
+//		
+//		} 
+		
 	}
 
 	// Reads lines from a file specified by Path and prints them to the console 
