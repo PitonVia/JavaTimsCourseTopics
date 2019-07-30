@@ -21,7 +21,7 @@ public class ArrayIntro {
 		System.out.println(intArray[5]);
 		System.out.println();
 		
-		// Another way to declare an array with actual values
+		// Another way to declare an array with actual values, a.k.a, anonymous array
 		int[] intArray2 = {1,2,3,4,5};
 		
 		// A good way to initialize an array is to use a for loop
@@ -47,9 +47,14 @@ public class ArrayIntro {
 		
 	// Method for printing array's values
 	public static void printArray(int[] array) {
-		for (int i=0; i<array.length; i++) {
+		// for each loop
+		for (int i : array) {
 			System.out.print(array[i] + " ");
 		}
+		
+//		for (int i=0; i<array.length; i++) {
+//			System.out.print(array[i] + " ");
+//		}
 		System.out.println();
 	}
 }

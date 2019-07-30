@@ -4,20 +4,19 @@ public class StringBits {
 
 	public static void main(String[] args) {
 			
-//		Given a string, return a new string made of every other char 
-//		starting with the first, so "Hello" yields "Hlo".
+//		Given a non-empty string like "Code" return a string like "CCoCodCode".
+//		Note that the new string contains 4 parts, each part has +1 char from the beginning of the string. 
 		
-		System.out.println(stringBits("Hello")); // → Hlo
-		System.out.println(stringBits("Hi")); // → H
-		System.out.println(stringBits("Heeololeo")); // → Hello
+		System.out.println(stringSplosion("Code")); // → CCoCodCode
+		System.out.println(stringSplosion("Hi")); // → HHi
+		System.out.println(stringSplosion("")); // → 
 	}
  
-	public static String stringBits(String str) {	
+	public static String stringSplosion(String str) {	
 		String result = "";
 		
-		for (int i=0; i<(str.length()); i+=2) {
-//			result += str.substring(i, i+1); //	either one works!
-			result += str.charAt(i);
+		for (int i=0; i <= (str.length()); i++) {
+			result += str.substring(0,i);
 		}
 		return result;
 	}
