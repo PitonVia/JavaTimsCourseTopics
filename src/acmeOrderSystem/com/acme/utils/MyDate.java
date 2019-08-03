@@ -25,6 +25,14 @@ public class MyDate {
 		return Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year) ;
 	}
 
+	public static void leapYears() {	
+		for (int i=1752; i <= 2020; i+=4) {
+			if (i % 100 != 0 || i % 400 == 0) {
+				System.out.println(i + " is a leap year");
+			}
+		}
+	}
+	
 	public void setDate(int month, int day, int year) {
 		this.month = month;
 		this.day = day;

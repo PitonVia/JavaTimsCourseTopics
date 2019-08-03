@@ -44,6 +44,36 @@ public class Order {
 		return this.orderAmount * Order.taxRate;
 	}
 	
+	public char jobSize() {
+		if (this.quantity > 150) return 'X';
+		else if (this.quantity > 75) return 'L';
+		else if (this.quantity > 25) return 'M';
+		else return 'S';
+	}
+	
+	public double computeTotal() {
+		
+		double discount = 0.0;
+		switch(jobSize()) {
+		case 'S':
+			discount = 0.0;
+			break;
+		case 'M':
+			discount = 0.01 * this.orderAmount;
+			break;
+		case 'L':
+			discount = 0.02 * this.orderAmount;
+			break;
+		case 'X':
+			discount = 0.03 * this.orderAmount;
+		}
+		
+		double tax = computeTax();
+		if (orderAmount > 1500) tax = 0.0;
+	
+		return this.orderAmount - discount + tax;  // order total
+	}
+	
 	public String toString(){
 		return quantity + " ea. " + product + " for " + customer; 
 	}
